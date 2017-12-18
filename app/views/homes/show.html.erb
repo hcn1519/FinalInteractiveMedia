@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @home.content %>
+</p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @home.tag %>
+</p>
+
+<p>
+  <strong>Writedate:</strong>
+  <%= @home.writeDate %>
+</p>
+
+<%= link_to 'Edit', edit_home_path(@home) %> |
+<%= link_to 'Back', homes_path %>
