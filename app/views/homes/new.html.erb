@@ -1,5 +1,54 @@
-<h1>New Home</h1>
+<script type="text/javascript">
+// $(function () {
+//   $('[data-toggle="popover"]').popover();
+// });
 
-<%= render 'form' %>
+var content = [];
+$(document).ready(function () {
+  var template = '<div class="popover" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
 
-<%= link_to 'Back', homes_path %>
+  var tagColor = ['#EE220C', '#4051FF', '#2CC22F', '#FFBE03'];
+  var tagName = ['School', 'Game', 'Sleep', 'Workout'];
+
+  for (var i = 0; i < tagColor.length; i++) {
+      var temp = '<button type="button" onclick="styleTagButton('+ i +')" class="btn btn-dark popover-event"><div class="circle tag-label" style="background-color:' +
+                    tagColor[i]+ '"'+ '></div><span>' +
+                    tagName[i] + '</span></button>';
+      content.push(temp);
+  }
+
+  var popoverContent = content.join('');
+
+  $('.popover-event').popover({
+        content: popoverContent,
+        template: template,
+        placement: "right",
+        html: true
+    });
+});
+
+function styleTagButton(tag) {
+  $(".btn-new").html(content[tag]);
+  $(".btn-new").css({"background-color": "rgb(67,67,67)", "padding": "0"});
+
+  var tagName = $(".btn-new > .btn-dark > span").html();
+  setTagData(tagName);
+}
+
+function setTagData(tagName) {
+  $("#home_tag").text(tagName);
+}
+</script>
+
+<%= link_to homes_path, :style => "position: absolute; z-index: 9999" do %>
+  <img src="/img/arrowWhite.png" alt="뒤로" style="width: 30px; margin: 20px 0px 0px 20px;opacity:  0.8;">
+<% end %>
+<header id="top" class="header">
+    <div class="text-vertical-center">
+        <h2 style="margin-bottom: 40px">Hey, What Are You Doing? :D</h2>
+
+        <%= render 'form' %>
+
+
+    </div>
+</header>

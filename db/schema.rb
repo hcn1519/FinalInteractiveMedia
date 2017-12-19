@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20171218132211) do
 
   create_table "homes", force: :cascade do |t|
     t.string   "content"
-    t.integer  "tag"
+    t.string   "tag"
     t.datetime "writeDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

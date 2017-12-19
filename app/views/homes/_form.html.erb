@@ -12,18 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
+    <%= f.text_field :content, :placeholder => "Write Down Here :D", :id => "write-content" %>
   </div>
   <div class="field">
-    <%= f.label :tag %><br>
-    <%= f.number_field :tag %>
+    <button type="button" class="btn btn-new popover-event" data-toggle="popover" data-placement="right" data-trigger="focus">
+      Set Tag🚦
+    </button>
+    <%= f.hidden_field :tag %>
+    <!-- <%= f.text_field :tag %> -->
   </div>
-  <div class="field">
+  <div class="field hidden">
     <%= f.label :writeDate %><br>
     <%= f.datetime_select :writeDate %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Let's Go 😎", :class => "btn btn-new-submit" %>
   </div>
 <% end %>
