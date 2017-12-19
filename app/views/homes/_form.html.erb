@@ -15,10 +15,17 @@
     <%= f.text_field :content, :placeholder => "Write Down Here :D", :id => "write-content" %>
   </div>
   <div class="field">
-    <button type="button" class="btn btn-new popover-event" data-toggle="popover" data-placement="right">
-      Set Tag🚦
-    </button>
+    <% if @home.tag == "" || @home.tag == nil %>
+      <button type="button" class="btn btn-new popover-event" data-toggle="popover" data-placement="right">
+        Set Tag🚦
+      </button>
+    <% else %>
+      <button type="button" class="btn btn-dark btn-new popover-event" data-toggle="popover" data-placement="right">
+        <%= @home.tag %>
+      </button>
+    <% end %>
     <%= f.hidden_field :tag %>
+    <%= f.hidden_field :tagColor %>
   </div>
   <div class="field hidden">
     <%= f.label :writeDate %><br>

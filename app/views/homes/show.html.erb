@@ -1,19 +1,22 @@
-<p id="notice"><%= notice %></p>
+<header id="top" class="header">
+    <div class="text-vertical-center">
+      <h2 id="new-title">Search :D</h2>
 
-<p>
-  <strong>Content:</strong>
-  <%= @home.content %>
-</p>
+<table>
 
-<p>
-  <strong>Tag:</strong>
-  <%= @home.tag %>
-</p>
+</table>
+<div class="circle"></div>
+      <h4>🖋 <%= @home.content %></h4>
+      <p><%= @home.writeDate.strftime("%Y/%-m/%-d %H:%M %Z") %></p>
 
-<p>
-  <strong>Writedate:</strong>
-  <%= @home.writeDate %>
-</p>
+      <button type="button" class="btn btn-dark">
+        <div class="circle tag-label" style="background-color:<%= @home.tagColor %>"></div>
+        <span><%= @home.tag %></span>
+      </button>
+
+      <a href="/list/index">See what you :D:D Today</a>
+    </div>
+</header>
 
 <%= link_to 'Edit', edit_home_path(@home) %> |
 <%= link_to 'Back', homes_path %>

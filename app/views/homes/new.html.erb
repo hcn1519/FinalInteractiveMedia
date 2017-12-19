@@ -1,14 +1,10 @@
 <script type="text/javascript">
-// $(function () {
-//   $('[data-toggle="popover"]').popover();
-// });
-
 var content = [];
+var tagColor = ['#EE220C', '#4051FF', '#2CC22F', '#FFBE03'];
+var tagName = ['School', 'Game', 'Sleep', 'Workout'];
+
 $(document).ready(function () {
   var template = '<div class="popover" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
-
-  var tagColor = ['#EE220C', '#4051FF', '#2CC22F', '#FFBE03'];
-  var tagName = ['School', 'Game', 'Sleep', 'Workout'];
 
   for (var i = 0; i < tagColor.length; i++) {
       var temp = '<button type="button" onclick="styleTagButton('+ i +')" class="btn btn-dark popover-event"><div class="circle tag-label" style="background-color:' +
@@ -32,11 +28,13 @@ function styleTagButton(tag) {
   $(".btn-new").css({"background-color": "rgb(67,67,67)", "padding": "0"});
 
   var tagName = $(".btn-new > .btn-dark > span").html();
-  setTagData(tagName);
+  var color = tagColor[tag];
+  setTagData(tagName, color);
 }
 
-function setTagData(tagName) {
+function setTagData(tagName, color) {
   $("#home_tag").val(tagName);
+  $("#home_tagColor").val(color);
 }
 </script>
 
@@ -48,7 +46,6 @@ function setTagData(tagName) {
         <h2 id="new-title">Hey, What Are You Doing? :D</h2>
 
         <%= render 'form' %>
-
 
     </div>
 </header>
