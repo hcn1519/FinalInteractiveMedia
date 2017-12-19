@@ -9,6 +9,28 @@ body {
   src: url(/fonts/NanumSquareRoundR.ttf) format("truetype");
 }
 
+#logo {
+    width: 40%;
+}
+#write-content {
+    font-size: 30px;
+}
+#new-title {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+@media(max-width:768px) {
+  #logo {
+    width: 80%;
+  }
+
+  #write-content {
+      font-size: 24px;
+  }
+  #new-title {
+    font-size: 24px;
+  }
+}
 .hidden {
   visibility: hidden;
 }

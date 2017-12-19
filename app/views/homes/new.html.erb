@@ -36,7 +36,7 @@ function styleTagButton(tag) {
 }
 
 function setTagData(tagName) {
-  $("#home_tag").text(tagName);
+  $("#home_tag").val(tagName);
 }
 </script>
 
@@ -45,7 +45,7 @@ function setTagData(tagName) {
 <% end %>
 <header id="top" class="header">
     <div class="text-vertical-center">
-        <h2 style="margin-bottom: 40px">Hey, What Are You Doing? :D</h2>
+        <h2 id="new-title">Hey, What Are You Doing? :D</h2>
 
         <%= render 'form' %>
 

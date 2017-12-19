@@ -15,11 +15,10 @@
     <%= f.text_field :content, :placeholder => "Write Down Here :D", :id => "write-content" %>
   </div>
   <div class="field">
-    <button type="button" class="btn btn-new popover-event" data-toggle="popover" data-placement="right" data-trigger="focus">
+    <button type="button" class="btn btn-new popover-event" data-toggle="popover" data-placement="right">
       Set Tag🚦
     </button>
     <%= f.hidden_field :tag %>
-    <!-- <%= f.text_field :tag %> -->
   </div>
   <div class="field hidden">
     <%= f.label :writeDate %><br>
