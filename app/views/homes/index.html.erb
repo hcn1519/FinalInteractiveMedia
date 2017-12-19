@@ -1,14 +1,23 @@
-
-<script type="text/javascript">
-  var element = document.getElementById("home-link");
-
-</script>
-
-<!-- Header -->
 <header id="top" class="header">
     <div class="text-vertical-center">
-      <img src="/img/logoWhite.png" id="logo" alt="로고" style="margin-bottom: 30px">
-        <br>
-        <%= link_to 'Write Down What you :D:D Today 😎', new_home_path, :class => "btn btn-home btn-lg" %>
+      <h2 id="new-title">You Write So Far</h2>
+      <% if !@isEmpty %>
+      <% @homes.each do |home| %>
+        <div class="card" style="width: 30rem;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="circle tag-label" style="background-color:<%= home.tagColor %>"></div>
+              🖋 <%= home.content %> <span style="float:right;margin-top: 1.5px;"><%= home.writeDate.strftime("%H:%M") %></span>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+      <% else %>
+      <div class="card" style="width: 30rem; margin-bottom: 30px">
+            You Didn't write anything :(
+      </div>
+      <% end %>
+
+      <%= link_to 'Write Something 😎', new_home_path, :class => "btn btn-home btn-lg" %>
     </div>
 </header>

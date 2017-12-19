@@ -5,11 +5,20 @@ class HomesController < ApplicationController
   # GET /homes.json
   def index
     @homes = Home.all
+    @homes.each { |home|
+      puts home.writeDate
+    }
+    @isEmpty = false
+    if @homes.count == 0
+      @isEmpty = true
+    end
+
   end
 
   # GET /homes/1
   # GET /homes/1.json
   def show
+    @date = Time.zone.today
   end
 
   # GET /homes/new

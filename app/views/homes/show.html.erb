@@ -1,20 +1,37 @@
 <header id="top" class="header">
     <div class="text-vertical-center">
-      <h2 id="new-title">Search :D</h2>
+      <h2 id="new-title">Your Write :D</h2>
 
 <table>
 
 </table>
 <div class="circle"></div>
+      <div class="card" style="width: 30rem;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="circle tag-label" style="background-color:<%= @home.tagColor %>"></div>
+            🖋 <%= @home.content %> <span style="float:right;margin-top: 1.5px;"><%= @home.writeDate.strftime("%H:%M") %></span>
+          </li>
+        </ul>
+      </div>
+<!--
+
       <h4>🖋 <%= @home.content %></h4>
       <p><%= @home.writeDate.strftime("%Y/%-m/%-d %H:%M %Z") %></p>
 
       <button type="button" class="btn btn-dark">
         <div class="circle tag-label" style="background-color:<%= @home.tagColor %>"></div>
         <span><%= @home.tag %></span>
-      </button>
+      </button> -->
 
-      <a href="/list/index">See what you :D:D Today</a>
+      <form action="/list/index" method="POST">
+        <input type="hidden" name="year" value="<%= @date.strftime("%Y") %>" class="date">
+        <input type="hidden" name="month" value="<%= @date.strftime("%m") %>" class="date">
+        <input type="hidden" name="day" value="<%= @date.strftime("%d") %>" class="date">
+
+        <button type="submit" class="btn btn-new-submit" style="font-size:12px" name="button">See what you :D:D Today</button>
+      </form>
+
     </div>
 </header>
 

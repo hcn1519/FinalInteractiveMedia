@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  root :to => 'intro#index'
 
-  match ':controller(/:action(/:id))', :via => [:get, :post]
+  # match ':controller(/:action(/:id))', :via => [:get, :post]
 
-  root :to => 'homes#index'
+  get 'intro/index'
+  post 'list/index'
+  get 'list/search'
 
   resources :homes
   # The priority is based upon order of creation: first created -> highest priority.
