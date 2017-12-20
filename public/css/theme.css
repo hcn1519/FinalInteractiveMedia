@@ -8,6 +8,7 @@ body {
   font-family: "NanumSquareRoundR";
   src: url(/fonts/NanumSquareRoundR.ttf) format("truetype");
 }
+
 table {
     margin: 0 auto;
 }
